@@ -23,13 +23,19 @@ Fora do horário de aula ou monitoria:
 
 ## Slides
 
-| slides                                                                                                         |
-|:---------------------------------------------------------------------------------------------------------------|
-| [slides/01-introducao-ao-curso.html](https://curso-r.github.io/main-r4ds-1/slides/01-introducao-ao-curso.html) |
-| [slides/02-introducao-ao-r.html](https://curso-r.github.io/main-r4ds-1/slides/02-introducao-ao-r.html)         |
-| [slides/03-importacao.html](https://curso-r.github.io/main-r4ds-1/slides/03-importacao.html)                   |
-| [slides/04-manipulacao.html](https://curso-r.github.io/main-r4ds-1/slides/04-manipulacao.html)                 |
-| [slides/05-ggplot2.html](https://curso-r.github.io/main-r4ds-1/slides/05-ggplot2.html)                         |
+| slides                                                                                                                    |
+|:--------------------------------------------------------------------------------------------------------------------------|
+| [slides/01-introducao-ao-curso.html](https://curso-r.github.io/main-r4ds-1/slides/01-introducao-ao-curso.html)            |
+| [slides/01-introducao-ao-curso.pdf](https://curso-r.github.io/main-r4ds-1/slides/01-introducao-ao-curso.pdf)              |
+| [slides/02-introducao-ao-r.html](https://curso-r.github.io/main-r4ds-1/slides/02-introducao-ao-r.html)                    |
+| [slides/02-introducao-ao-r.pdf](https://curso-r.github.io/main-r4ds-1/slides/02-introducao-ao-r.pdf)                      |
+| [slides/03-importacao.html](https://curso-r.github.io/main-r4ds-1/slides/03-importacao.html)                              |
+| [slides/03-importacao.pdf](https://curso-r.github.io/main-r4ds-1/slides/03-importacao.pdf)                                |
+| [slides/04-manipulacao.html](https://curso-r.github.io/main-r4ds-1/slides/04-manipulacao.html)                            |
+| [slides/04-manipulacao.pdf](https://curso-r.github.io/main-r4ds-1/slides/04-manipulacao.pdf)                              |
+| [slides/05-ggplot2.html](https://curso-r.github.io/main-r4ds-1/slides/05-ggplot2.html)                                    |
+| [slides/05-ggplot2.pdf](https://curso-r.github.io/main-r4ds-1/slides/05-ggplot2.pdf)                                      |
+| [slides/img/linha_do_tempo_e\_cursos.pptx](https://curso-r.github.io/main-r4ds-1/slides/img/linha_do_tempo_e_cursos.pptx) |
 
 ## Scripts utilizados em aula
 
