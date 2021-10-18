@@ -62,20 +62,9 @@ Referências extras comentadas nas aulas, ou materiais que comentamos
 quando tiramos dúvidas (não necessariamente são relacionadas com o
 conteúdo da aula).
 
-| Aula | Tema        | Descrição                                                                                                                                                         |
-|-----:|:------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    0 | Instalação  | [Capítulo do livro “Ciência de Dados em R”: Instalação](https://livro.curso-r.com/1-instalacao.html)                                                              |
-|    1 | Comunidades | [R-Ladies - Dashboard](https://benubah.github.io/r-community-explorer/rladies.html)                                                                               |
-|    1 | Comunidades | [Apresentação sobre a R-Ladies São Paulo](https://r-ladies-sao-paulo.github.io/RLadiesTheme/)                                                                     |
-|    1 | Comunidades | [AI Inclusive](https://www.ai-inclusive.org/)                                                                                                                     |
-|    1 | Comunidades | [Grupo de telegram R Brasil](https://t.me/rbrasiloficial)                                                                                                         |
-|    1 | Curso-R     | [Blog da Curso-R](https://blog.curso-r.com/)                                                                                                                      |
-|    1 | Curso-R     | [Canal no Youtube - Lives nas quartas-feiras às 20h](https://www.youtube.com/c/CursoR6/featured)                                                                  |
-|    1 | Curso-R     | [Materiais dos cursos](https://curso-r.com/material/)                                                                                                             |
-|    1 | Introdução  | [Folha de cola (cheatsheet): R Básico](https://rstudio.com/wp-content/uploads/2016/05/base-r.pdf)                                                                 |
-|    1 | Introdução  | [Folha de cola (cheatsheet): RStudio](https://raw.githubusercontent.com/rstudio/cheatsheets/master/translations/portuguese/rstudio-IDE-cheatsheet-portuguese.pdf) |
-|    1 | Introdução  | [Capítulo do livro “Ciência de Dados em R”: R Básico](https://livro.curso-r.com/3-r-base.html)                                                                    |
-|    1 | Introdução  | [Capítulo do livro “Ciência de Dados em R”: Pacotes](https://livro.curso-r.com/4-pacotes.html)                                                                    |
+| Aula | Tema       | Descrição                                                                                            |
+|-----:|:-----------|:-----------------------------------------------------------------------------------------------------|
+|    0 | Instalação | [Capítulo do livro “Ciência de Dados em R”: Instalação](https://livro.curso-r.com/1-instalacao.html) |
 
 ## Redes sociais da Curso-R
 

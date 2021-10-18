@@ -4,7 +4,7 @@ params:
   main_repo: "main-r4ds-1"
   turma: "202110-r4ds-1"
   nome_curso: "R para Ciência de Dados 1"
-  num_aula: 1
+  num_aula: 0
   download_material: TRUE # Deixe TRUE se quiser que tenha um link
   # para baixar o zip do material
 ---
@@ -81,6 +81,7 @@ tibble::tibble(
   link = paste0("https://curso-r.github.io/", params$main_repo, "/", nome),
   exercicio = glue::glue("[{nome}]({link})")
 ) %>%
+    dplyr::filter(!stringr::str_detect(nome, "resolucao_")) %>% 
   dplyr::select(exercicio) %>% 
   knitr::kable()
 ```
