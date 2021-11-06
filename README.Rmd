@@ -71,9 +71,9 @@ pasta <- "exemplos_de_aula/"
 knitr::kable(
   tibble::tibble(
     script = list.files(pasta, pattern = ".R$"),
-    link = paste0("https://curso-r.github.io/", params$turma, "/", pasta, script),
-    scrpit = glue::glue("[{script}]({link})")
+    link = paste0("https://curso-r.github.io/", params$turma, "/", pasta, script)
   ) %>%
+    dplyr::mutate(script = glue::glue("[{script}]({link})")) %>% 
     dplyr::select(script)
 )
 ```
@@ -149,7 +149,7 @@ Facebook: https://www.facebook.com/cursodeR
 
 
 
-```{r}
+```{r include=FALSE}
 # Criar arquivo _config.yml
 if(params$download_material == TRUE){
  glue::glue('theme: jekyll-theme-minimal', '\n',
