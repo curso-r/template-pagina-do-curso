@@ -1,12 +1,11 @@
 ---
 output: github_document
-params: 
-  main_repo: "main-r4ds-1"
-  turma: "202110-r4ds-1"
-  nome_curso: "R para Ciência de Dados 1"
-  num_aula: 0
-  download_material: TRUE # Deixe TRUE se quiser que tenha um link
-  # para baixar o zip do material
+params:
+  main_repo: main-pacotes
+  turma: 202205-pacotes
+  nome_curso: Pacotes
+  num_aula: '0'
+  download_material: 'FALSE'
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
