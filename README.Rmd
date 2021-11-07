@@ -45,11 +45,11 @@ Fora do horário de aula ou monitoria:
 ## Slides
 
 ```{r}
-paths <- CursoRutils:::list_github_files(params$main_repo, "slides/", "[0-9]-.*html$") %>% 
+paths <- CursoRopen:::list_github_files(params$main_repo, "slides/", "[0-9]-.*html$") %>% 
   tibble::enframe(value = "paths") %>% 
   dplyr::filter(!stringr::str_detect(paths, "figure-html")) %>% 
   dplyr::pull(paths)
-paths_pdf <- CursoRutils:::list_github_files(params$main_repo, "slides/", "[0-9]-.*pdf$") 
+paths_pdf <- CursoRopen:::list_github_files(params$main_repo, "slides/", "[0-9]-.*pdf$") 
 tibble::tibble(
   slide = paths,
   link = paste0("https://curso-r.github.io/", params$main_repo, "/", slide),
@@ -83,7 +83,7 @@ knitr::kable(
 
 ```{r}
 tibble::tibble(
-  nome = CursoRutils:::list_github_files(params$main_repo, "exercicios/"),
+  nome = CursoRopen:::list_github_files(params$main_repo, "exercicios/"),
   link = paste0("https://curso-r.github.io/", params$main_repo, "/", nome),
   exercicio = glue::glue("[{nome}]({link})")
 ) %>%
@@ -124,7 +124,6 @@ Referências extras comentadas nas aulas, ou materiais que comentamos quando tir
 
 googlesheets4::gs4_deauth()
 "1SmCKCvJBff3CVty-xYKJ4NhEo2j6sUwkdET46vQisDY" %>% 
-  googledrive::as_id() %>% 
   googlesheets4::read_sheet(params$main_repo) %>%
   dplyr::mutate(link = glue::glue("[{desc}]({url})")) %>%
   dplyr::select(-desc, -url) %>%
