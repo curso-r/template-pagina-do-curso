@@ -66,9 +66,9 @@ jobs:
 
       - name: Execute Script
         env:
-          MAIN_REPO: ${{ github.event.client_payload.main_repo }}
-          TURMA: ${{ github.event.client_payload.turma }}
-          NOME_CURSO: ${{ github.event.client_payload.nome_curso }}
-          DOWNLOAD_MATERIAL: ${{ github.event.client_payload.download_material }}
+          MAIN_REPO: ${{ github.event.inputs.main_repo }}
+          TURMA: ${{ github.event.inputs.turma }}
+          NOME_CURSO: ${{ github.event.inputs.nome_curso }}
+          DOWNLOAD_MATERIAL: ${{ github.event.inputs.download_material }}
         run: |
           Rscript "inst/render_readme.R"
