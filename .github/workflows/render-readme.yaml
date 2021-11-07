@@ -72,3 +72,13 @@ jobs:
           DOWNLOAD_MATERIAL: ${{ github.event.inputs.download_material }}
         run: |
           Rscript "inst/render_readme.R"
+
+      - name: Commit results
+        run: |
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add README.Rmd
+          git add README.md
+          git add _config.yml
+          git commit -m "Atualizando README" || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
