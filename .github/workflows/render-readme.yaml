@@ -1,4 +1,22 @@
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      main_repo:
+        description: 'Nome do repositorio main'
+        required: true
+        default: 'main-r4ds-1'
+      turma:
+        description: 'codigo da turma. ex: 202110-r4ds-1'
+        required: true
+        default: '202110-r4ds-1'
+      nome_curso:
+        description: 'Nome do curso'
+        required: true
+        default: 'R para Ciência de Dados 1'
+      download_material:
+        description: 'TRUE ou FALSE, se o curso tem zip para baixar'
+        required: true
+        default: 'TRUE'
 
 name: render-readme
 
