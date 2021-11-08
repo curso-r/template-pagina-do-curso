@@ -3,7 +3,7 @@ output: github_document
 params:
   main_repo: main-pacotes
   turma: 202205-pacotes
-  nome_curso: Pacotes
+  nome_curso: ATUALIZANDO....
   num_aula: '0'
   download_material: 'FALSE'
 ---
