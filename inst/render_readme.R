@@ -1,3 +1,4 @@
+library(magrittr, include.only = "%>%")
 # mudar o yaml do arquivo .Rmd -------------
 CursoRopen::change_rmd_yaml(
   "README.Rmd",
