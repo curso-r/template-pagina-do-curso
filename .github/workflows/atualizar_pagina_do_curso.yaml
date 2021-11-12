@@ -51,7 +51,7 @@ jobs:
 
       - name: Execute Script
         run: |
-          Rscript "list.files(); rmarkdown::render(input = "README.Rmd", output_format = "github_document", clean = TRUE, output_file = "README.md")"
+          Rscript "inst/atualizar_pagina.R"
 
       - name: Commit results
         run: |
