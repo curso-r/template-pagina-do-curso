@@ -1,8 +1,8 @@
 ---
 output: github_document
 params:
-  main_repo: main-pacotes
-  turma: 202205-pacotes
+  main_repo: main-intro-programacao
+  turma: 202102-intro-programacao
   nome_curso: ATUALIZANDO....
   num_aula: '0'
   download_material: 'FALSE'
@@ -67,12 +67,19 @@ tibble::tibble(
 
 ```{r}
 pasta <- "exemplos_de_aula/"
+
+
 knitr::kable(
   tibble::tibble(
-    script = list.files(pasta, pattern = ".R$"),
-    link = paste0("https://curso-r.github.io/", params$turma, "/", pasta, script)
+    script = CursoRopen:::list_github_files(params$main_repo, pasta, ".R$"),
+    link = paste0(
+      "https://github.com/curso-r/",
+      params$turma,
+      "/blob/master/",
+      script
+    )
   ) %>%
-    dplyr::mutate(script = glue::glue("[{script}]({link})")) %>% 
+    dplyr::mutate(script = glue::glue("[{script}]({link})")) %>%
     dplyr::select(script)
 )
 ```
@@ -94,20 +101,20 @@ tibble::tibble(
 
 ## Trabalhos finais premiados
 
-Em breve
-
-```{r eval=FALSE, include=FALSE}
-nome_pasta <- "trabalhos_finais"
+```{r echo=FALSE}
+nome_pasta <- "trabalhos_premiados"
 
 tibble::tibble(
-  script = list.files(nome_pasta, recursive = FALSE),
+  script = CursoRopen:::list_github_files(params$turma, nome_pasta, ".zip|.rar"),
   link = paste0(
-    "https://curso-r.github.io/",
-    params$turma, "/",
-    nome_pasta, "/",
+    "https://github.com/curso-r/",
+    params$turma,
+    "/raw/master/",
     script
-  )
+  ),
+  pasta_compactada = glue::glue("[{script}]({link})")
 ) %>% 
+  dplyr::select(pasta_compactada) %>% 
   knitr::kable()
 ```
 
@@ -115,7 +122,7 @@ tibble::tibble(
 
 ## Material extra
 
-Referências extras comentadas nas aulas, ou materiais que comentamos quando tiramos dúvidas (não necessariamente são relacionadas com o conteúdo da aula).
+Referências extras relacionadas com o conteúdos das aulas, ou materiais que comentamos quando tiramos dúvidas (não necessariamente são relacionadas com o conteúdo da aula).
 
 ```{r echo=FALSE, message=FALSE}
 
@@ -127,7 +134,7 @@ googlesheets4::gs4_deauth()
   dplyr::mutate(link = glue::glue("[{desc}]({url})")) %>%
   dplyr::select(-desc, -url) %>%
   dplyr::arrange(aula) %>% 
-  dplyr::filter(aula <= params$num_aula) %>% 
+  # dplyr::filter(aula <= params$num_aula) %>% 
   knitr::kable(col.names = c("Aula", "Tema", "Descrição")) 
 
 ```
