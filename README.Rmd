@@ -153,7 +153,7 @@ id_spreadsheet %>%
 tabela <- safe_buscar_materiais_extras()
 
 if(tabela[1] == "erro") {
-  usethis::ui_info("Verificar tabela de materiais extras")
+  print("Verificar tabela de materiais extras")
 } else{
   tabela
 }
