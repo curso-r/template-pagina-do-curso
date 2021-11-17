@@ -1,10 +1,10 @@
 ---
 output: github_document
 params:
-  trilha_clean: visualizacao
-  main_repo: main-dashboards
-  turma: 202202-dashboards
-  nome_curso: Dashboards I
+  trilha_clean: programacao_para_ciencia_de_dados
+  main_repo: main-intro-programacao
+  turma: 202102-intro-programacao
+  nome_curso: ATUALIZANDO....
   num_aula: '0'
   download_material: 'FALSE'
 ---
@@ -147,10 +147,16 @@ id_spreadsheet %>%
   dplyr::arrange(aula) %>%
   # dplyr::filter(aula <= params$num_aula) %>%
   knitr::kable(col.names = c("Aula", "Tema", "Descrição")) 
-}, usethis::ui_info("Verificar tabela de materiais extras"))
+}, "erro")
 
 
-safe_buscar_materiais_extras()
+tabela <- safe_buscar_materiais_extras()
+
+if(tabela[1] == "erro") {
+  usethis::ui_info("Verificar tabela de materiais extras")
+} else{
+  tabela
+}
 
 ```
 
