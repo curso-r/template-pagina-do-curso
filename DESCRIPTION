@@ -19,6 +19,7 @@ Imports:
     readr,
     rmarkdown,
     stringr,
-    tibble
+    tibble,
+    usethis
 Remotes: 
     curso-r/CursoRopen
