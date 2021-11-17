@@ -126,27 +126,31 @@ tibble::tibble(
 Referências extras relacionadas com o conteúdos das aulas, ou materiais que comentamos quando tiramos dúvidas (não necessariamente são relacionadas com o conteúdo da aula).
 
 ```{r echo=FALSE, message=FALSE}
-
-# adicione aqui, na aba correspondente ao curso: https://docs.google.com/spreadsheets/d/1SmCKCvJBff3CVty-xYKJ4NhEo2j6sUwkdET46vQisDY/edit?usp=sharing
-
-googlesheets4::gs4_deauth()
+safe_buscar_materiais_extras <- purrr::possibly(.f = function(main_repo = params$main_repo, 
+                                                              trilha_clean = params$trilha_clean){
+  library(magrittr, include.only = "%>%")
+  googlesheets4::gs4_deauth()
 googledrive::drive_deauth()
 
 id_spreadsheet <- "1YV2vz52u2HXw1IhjrJ7dGhk7sim-9zRM" %>%
   googledrive::as_id() %>%
   googledrive::drive_ls() %>%
-  dplyr::filter(name == params$trilha_clean) %>%
+  dplyr::filter(name %in% params$trilha_clean) %>%
   dplyr::pull(id) %>%
   googlesheets4::as_sheets_id()
 
 
 id_spreadsheet %>%
-  googlesheets4::read_sheet(stringr::str_remove(params$main_repo, "main-")) %>%
+  googlesheets4::read_sheet(stringr::str_remove(main_repo, "main-")) %>%
   dplyr::mutate(link = glue::glue("[{desc}]({url})")) %>%
   dplyr::select(-desc,-url) %>%
   dplyr::arrange(aula) %>%
   # dplyr::filter(aula <= params$num_aula) %>%
   knitr::kable(col.names = c("Aula", "Tema", "Descrição")) 
+}, usethis::ui_info("Verificar tabela de materiais extras"))
+
+
+safe_buscar_materiais_extras()
 
 ```
 
