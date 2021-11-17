@@ -1,6 +1,7 @@
 ---
 output: github_document
 params:
+  trilha_clean: programacao_para_ciencia_de_dados
   main_repo: main-intro-programacao
   turma: 202102-intro-programacao
   nome_curso: ATUALIZANDO....
@@ -129,12 +130,22 @@ Referências extras relacionadas com o conteúdos das aulas, ou materiais que co
 # adicione aqui, na aba correspondente ao curso: https://docs.google.com/spreadsheets/d/1SmCKCvJBff3CVty-xYKJ4NhEo2j6sUwkdET46vQisDY/edit?usp=sharing
 
 googlesheets4::gs4_deauth()
-"1SmCKCvJBff3CVty-xYKJ4NhEo2j6sUwkdET46vQisDY" %>% 
-  googlesheets4::read_sheet(params$main_repo) %>%
+googledrive::drive_deauth()
+
+id_spreadsheet <- "1YV2vz52u2HXw1IhjrJ7dGhk7sim-9zRM" %>%
+  googledrive::as_id() %>%
+  googledrive::drive_ls() %>%
+  dplyr::filter(name == params$trilha_clean) %>%
+  dplyr::pull(id) %>%
+  googlesheets4::as_sheets_id()
+
+
+id_spreadsheet %>%
+  googlesheets4::read_sheet(stringr::str_remove(params$main_repo, "main-")) %>%
   dplyr::mutate(link = glue::glue("[{desc}]({url})")) %>%
-  dplyr::select(-desc, -url) %>%
-  dplyr::arrange(aula) %>% 
-  # dplyr::filter(aula <= params$num_aula) %>% 
+  dplyr::select(-desc,-url) %>%
+  dplyr::arrange(aula) %>%
+  # dplyr::filter(aula <= params$num_aula) %>%
   knitr::kable(col.names = c("Aula", "Tema", "Descrição")) 
 
 ```
