@@ -4,6 +4,7 @@ CursoRopen::change_rmd_yaml(
   "README.Rmd",
   params = list(
     main_repo = Sys.getenv("MAIN_REPO"),
+    trilha_clean = Sys.getenv("TRILHA_CLEAN"),
     turma = Sys.getenv("TURMA"),
     nome_curso = Sys.getenv("NOME_CURSO"),
     num_aula = "0",
