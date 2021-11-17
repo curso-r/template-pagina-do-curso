@@ -17,6 +17,10 @@ on:
         description: 'TRUE ou FALSE, se o curso tem zip para baixar'
         required: true
         default: 'TRUE'
+      trilha_clean:
+        description: 'nome da trilha em snake case e sem acentos. ex: programacao_para_ciencia_de_dados'
+        required: true
+        default: 'programacao_para_ciencia_de_dados'
 
 name: render-readme
 
@@ -70,6 +74,7 @@ jobs:
           TURMA: ${{ github.event.inputs.turma }}
           NOME_CURSO: ${{ github.event.inputs.nome_curso }}
           DOWNLOAD_MATERIAL: ${{ github.event.inputs.download_material }}
+          TRILHA_CLEAN: ${{ github.event.inputs.trilha_clean }}
         run: |
           Rscript "inst/render_readme.R"
 
