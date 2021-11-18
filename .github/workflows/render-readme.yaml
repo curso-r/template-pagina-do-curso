@@ -21,6 +21,10 @@ on:
         description: 'trilha_clean: nome da trilha em snake case e sem acentos. ex: programacao_para_ciencia_de_dados'
         required: true
         default: 'programacao_para_ciencia_de_dados'
+      pat:
+        description: 'GitHub PAT com permissão de workflow.'
+        required: true
+        default: '...'
 
 name: render-readme
 
@@ -38,7 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ github.event.inputs.pat }}
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
 
