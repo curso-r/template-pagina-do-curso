@@ -84,6 +84,7 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add README.Rmd
           git add README.md
+          git add .github/workflows/atualizar_pagina_do_curso.yaml
           git add _config.yml
           git add .github/r-depends.rds
           git commit -m "Atualizando README" || echo "No changes to commit"
