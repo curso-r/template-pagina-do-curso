@@ -2,23 +2,23 @@ on:
   workflow_dispatch:
     inputs:
       main_repo:
-        description: 'Nome do repositorio main'
+        description: 'main_repo: Nome do repositorio main'
         required: true
         default: 'main-r4ds-1'
       turma:
-        description: 'codigo da turma. ex: 202110-r4ds-1'
+        description: 'turma: codigo da turma. ex: 202110-r4ds-1'
         required: true
         default: '202110-r4ds-1'
       nome_curso:
-        description: 'Nome do curso'
+        description: 'nome_curso: Nome do curso'
         required: true
         default: 'R para Ciência de Dados 1'
       download_material:
-        description: 'TRUE ou FALSE, se o curso tem zip para baixar'
+        description: 'download_material: TRUE ou FALSE, se o curso tem zip para baixar'
         required: true
         default: 'TRUE'
       trilha_clean:
-        description: 'nome da trilha em snake case e sem acentos. ex: programacao_para_ciencia_de_dados'
+        description: 'trilha_clean: nome da trilha em snake case e sem acentos. ex: programacao_para_ciencia_de_dados'
         required: true
         default: 'programacao_para_ciencia_de_dados'
 
