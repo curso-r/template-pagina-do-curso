@@ -16,7 +16,7 @@ jobs:
         run: |
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git mv --verbose inst/atualizar_pagina_do_curso.yaml .github/workflows/atualizar_pagina_do_curso.yaml
+          mv --verbose inst/atualizar_pagina_do_curso.yaml .github/workflows/atualizar_pagina_do_curso.yaml
           git add .github/workflows/atualizar_pagina_do_curso.yaml
           git commit -m "Movendo o GHA" || echo "No changes to commit"
           git push origin || echo "No changes to commit"
