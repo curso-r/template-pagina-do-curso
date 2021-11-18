@@ -7,9 +7,11 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+      GITHUB_PAT: ${{ secrets.PAT }}
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
       - name: copy file and Commit results
         run: |
           git config --local user.name "$GITHUB_ACTOR"
