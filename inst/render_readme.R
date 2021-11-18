@@ -24,13 +24,13 @@ rmarkdown::render(
 
 )
 
-# mover o atualizar_pagina_do_curso.yaml para a pasta do actions ----
-
-caminho_gha_inicial <-
-  here::here("inst", "atualizar_pagina_do_curso.yaml")
-
-caminho_gha_final <-
-  here::here(".github", "workflows" ,  "atualizar_pagina_do_curso.yaml")
-
-
-fs::file_copy(caminho_gha_inicial, caminho_gha_final, overwrite = FALSE)
+# # mover o atualizar_pagina_do_curso.yaml para a pasta do actions ----
+#
+# caminho_gha_inicial <-
+#   here::here("inst", "atualizar_pagina_do_curso.yaml")
+#
+# caminho_gha_final <-
+#   here::here(".github", "workflows" ,  "atualizar_pagina_do_curso.yaml")
+#
+#
+# fs::file_copy(caminho_gha_inicial, caminho_gha_final, overwrite = FALSE)
