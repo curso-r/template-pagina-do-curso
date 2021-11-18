@@ -37,6 +37,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
 
@@ -84,6 +86,7 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add README.Rmd
           git add README.md
+          mv --verbose inst/atualizar_pagina_do_curso.yaml .github/workflows/atualizar_pagina_do_curso.yaml
           git add .github/workflows/atualizar_pagina_do_curso.yaml
           git add _config.yml
           git add .github/r-depends.rds
