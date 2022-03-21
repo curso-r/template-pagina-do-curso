@@ -59,6 +59,5 @@ jobs:
           mv --verbose inst/atualizar_pagina_do_curso.yaml .github/workflows/atualizar_pagina_do_curso.yaml
           git add .github/workflows/atualizar_pagina_do_curso.yaml
           git add _config.yml
-          git add .github/r-depends.rds
           git commit -m "Atualizando README" || echo "No changes to commit"
           git push origin || echo "No changes to commit"
