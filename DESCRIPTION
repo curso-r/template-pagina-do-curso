@@ -15,13 +15,10 @@ Imports:
     fs,
     glue,
     googlesheets4,
-    here,
     knitr,
     magrittr,
     readr,
     rmarkdown,
-    stringr,
-    tibble,
-    usethis
+    stringr
 Remotes:
     curso-r/CursoRopen
