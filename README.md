@@ -23,16 +23,13 @@ Fora do horário de aula ou monitoria:
 
 ## Slides
 
-| Slide                                                                                                                                              | PDF                                                                                                                                              |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|
-| [slides/01-introducao-ao-curso.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/01-introducao-ao-curso.html)             | [slides/01-introducao-ao-curso.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/01-introducao-ao-curso.pdf)             |
-| [slides/02-introducao-ao-RStudio.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/02-introducao-ao-RStudio.html)         | [slides/02-introducao-ao-RStudio.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/02-introducao-ao-RStudio.pdf)         |
-| [slides/03-introducao-ao-R.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/03-introducao-ao-R.html)                     | [slides/03-introducao-ao-R.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/03-introducao-ao-R.pdf)                     |
-| [slides/04-tabelas.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/04-tabelas.html)                                     | [slides/04-tabelas.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/04-tabelas.pdf)                                     |
-| [slides/05-filtros.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/05-filtros.html)                                     | [slides/05-filtros.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/05-filtros.pdf)                                     |
-| [slides/06-controle-de-fluxo-e-loops.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/06-controle-de-fluxo-e-loops.html) | [slides/06-controle-de-fluxo-e-loops.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/06-controle-de-fluxo-e-loops.pdf) |
-| [slides/07-funcoes.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/07-funcoes.html)                                     | [slides/07-funcoes.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/07-funcoes.pdf)                                     |
-| [slides/08-manipulacao-de-arquivos.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/08-manipulacao-de-arquivos.html)     | [slides/08-manipulacao-de-arquivos.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/08-manipulacao-de-arquivos.pdf)     |
+| Slide                                                                                                                                    | PDF                                                                                                                                    |
+|:-----------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------|
+| [slides/01-introducao-ao-curso.html](https://github.com/curso-r/202102-intro-programacao/blob/master/slides/01-introducao-ao-curso.html) | [slides/01-introducao-ao-curso.pdf](https://github.com/curso-r/202102-intro-programacao/blob/master/slides/01-introducao-ao-curso.pdf) |
+| [slides/02-aula-1.html](https://github.com/curso-r/202102-intro-programacao/blob/master/slides/02-aula-1.html)                           | [slides/02-aula-1.pdf](https://github.com/curso-r/202102-intro-programacao/blob/master/slides/02-aula-1.pdf)                           |
+| [slides/03-aula-2.html](https://github.com/curso-r/202102-intro-programacao/blob/master/slides/03-aula-2.html)                           | [slides/03-aula-2.pdf](https://github.com/curso-r/202102-intro-programacao/blob/master/slides/03-aula-2.pdf)                           |
+| [slides/04-aula-3.html](https://github.com/curso-r/202102-intro-programacao/blob/master/slides/04-aula-3.html)                           | [slides/04-aula-3.pdf](https://github.com/curso-r/202102-intro-programacao/blob/master/slides/04-aula-3.pdf)                           |
+| [slides/05-aula-4.html](https://github.com/curso-r/202102-intro-programacao/blob/master/slides/05-aula-4.html)                           | [slides/05-aula-4.pdf](https://github.com/curso-r/202102-intro-programacao/blob/master/slides/05-aula-4.pdf)                           |
 
 ## Scripts utilizados em aula
 
@@ -56,6 +53,8 @@ Fora do horário de aula ou monitoria:
 | [exemplos_de_aula/15-caminhos.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/15-caminhos.R)                                               |
 | [exemplos_de_aula/15-instalar-pacotes.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/15-instalar-pacotes.R)                               |
 | [exemplos_de_aula/exemplo-source.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/exemplo-source.R)                                         |
+
+## Práticas
 
 ## Lição de casa
 

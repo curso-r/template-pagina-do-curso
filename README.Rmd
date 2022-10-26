@@ -5,15 +5,12 @@ params:
   main_repo: main-intro-programacao
   turma: 202102-intro-programacao
   nome_curso: ATUALIZANDO....
-  num_aula: '0'
   download_material: 'TRUE'
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
-library(magrittr)
-
 # Default chunk options
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -54,59 +51,68 @@ Fora do horário de aula ou monitoria:
 ## Slides
 
 ```{r}
-htmls <- params$main_repo %>%
-  CursoRopen::enframe_github_files("slides/", "[0-9]-.*html$") %>%
-  dplyr::filter(!stringr::str_detect(link, "figure-html")) %>%
+htmls <- params$turma |>
+  CursoRopen::enframe_github_files("slides/", "[0-9]-.*html$") |>
+  dplyr::filter(!stringr::str_detect(link, "figure-html")) |>
   dplyr::mutate(
-    key = link %>%
-      stringr::str_remove("\\[") %>%
-      stringr::str_remove("\\].+") %>%
-      fs::path_file() %>%
+    key = link |>
+      stringr::str_remove("\\[") |>
+      stringr::str_remove("\\].+") |>
+      fs::path_file() |>
       fs::path_ext_remove()
-  ) %>%
+  ) |>
   dplyr::rename("Slide" = link)
 
-pdfs <- params$main_repo %>%
-  CursoRopen::enframe_github_files("slides/", "[0-9]-.*pdf$") %>%
+pdfs <- params$turma |>
+  CursoRopen::enframe_github_files("slides/", "[0-9]-.*pdf$") |>
   dplyr::mutate(
-    key = link %>%
-      stringr::str_remove("\\[") %>%
-      stringr::str_remove("\\].+") %>%
-      fs::path_file() %>%
+    key = link |>
+      stringr::str_remove("\\[") |>
+      stringr::str_remove("\\].+") |>
+      fs::path_file() |>
       fs::path_ext_remove()
-  ) %>%
+  ) |>
   dplyr::rename("PDF" = link)
 
-htmls %>%
-  dplyr::left_join(pdfs, by = "key") %>%
-  dplyr::select(-key) %>%
+htmls |>
+  dplyr::left_join(pdfs, by = "key") |>
+  dplyr::select(-key) |>
   knitr::kable()
 ```
 
 ## Scripts utilizados em aula
 
 ```{r}
-params$turma %>%
-  CursoRopen::enframe_github_files("exemplos_de_aula/", "\\.R$") %>%
-  dplyr::rename("Script" = link) %>%
+params$turma |>
+  CursoRopen::enframe_github_files("exemplos_de_aula/", "\\.R$") |>
+  dplyr::rename("Script" = link) |>
   knitr::kable()
+```
+
+## Práticas
+
+```{r}
+# params$turma |>
+#   CursoRopen::enframe_github_files("pratica/", "\\.R$") |>
+#   dplyr::rename("Script" = link) |>
+#   knitr::kable()
 ```
 
 ## Lição de casa
 
 ```{r}
-params$turma %>%
-  CursoRopen::enframe_github_files("exercicios/", "\\.R$") %>%
-  dplyr::rename("Exercício" = link) %>%
+params$turma |>
+  CursoRopen::enframe_github_files("exercicios/", "\\.R$") |>
+  dplyr::rename("Exercício" = link) |>
   knitr::kable()
 ```
 
 ## Trabalhos finais premiados
 
 ```{r}
-params$turma %>%
-  CursoRopen::enframe_github_files("trabalhos_premiados/", "(\\.zip|\\.rar)$") %>%
-  dplyr::rename("Pasta Compactada" = link) %>%
+params$turma |>
+  CursoRopen::enframe_github_files("trabalhos_premiados/", "(\\.zip|\\.rar)$") |>
+  dplyr::rename("Pasta Compactada" = link) |>
   knitr::kable()
 ```
 
@@ -119,19 +125,18 @@ buscar_materias_extras <- function(main_repo = params$main_repo, trilha_clean = 
   googlesheets4::gs4_deauth()
   googledrive::drive_deauth()
 
-  id_spreadsheet <- "1YV2vz52u2HXw1IhjrJ7dGhk7sim-9zRM" %>%
-    googledrive::as_id() %>%
-    googledrive::drive_ls() %>%
-    dplyr::filter(name %in% params$trilha_clean) %>%
-    dplyr::pull(id) %>%
+  id_spreadsheet <- "1YV2vz52u2HXw1IhjrJ7dGhk7sim-9zRM" |>
+    googledrive::as_id() |>
+    googledrive::drive_ls() |>
+    dplyr::filter(name %in% params$trilha_clean) |>
+    dplyr::pull(id) |>
     googlesheets4::as_sheets_id()
 
-  id_spreadsheet %>%
-    googlesheets4::read_sheet(stringr::str_remove(main_repo, "main-")) %>%
-    dplyr::mutate(link = glue::glue("[{desc}]({url})")) %>%
-    dplyr::select(-desc, -url) %>%
-    dplyr::arrange(aula) %>%
-    # dplyr::filter(aula <= params$num_aula) %>%
+  id_spreadsheet |>
+    googlesheets4::read_sheet(stringr::str_remove(main_repo, "main-")) |>
+    dplyr::mutate(link = glue::glue("[{desc}]({url})")) |>
+    dplyr::select(-desc, -url) |>
+    dplyr::arrange(aula) |>
     knitr::kable(col.names = c("Aula", "Tema", "Descrição"))
 }
 
