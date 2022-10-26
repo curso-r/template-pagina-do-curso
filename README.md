@@ -3,45 +3,79 @@
 
 ## Informações importantes
 
+-   [Clique
+    aqui](https://github.com/curso-r/202102-intro-programacao/archive/refs/heads/master.zip)
+    para baixar o material do curso.
+
 -   Nosso blog: <https://curso-r.com/blog/>
 
--   Nossos livros:
-
-    -   [Ciência de Dados em R](https://livro.curso-r.com/)
-    -   [Zen do R](https://curso-r.github.io/zen-do-r/)
-    -   [Programando em
-        Shiny](https://programando-em-shiny.curso-r.com/)
-    -   [Beautiful R](https://curso-r.github.io/beautiful-r/) (em
-        inglês)
+-   Nossos livros: [Ciência de Dados em R](https://livro.curso-r.com/) e
+    [Zen do R](https://curso-r.github.io/zen-do-r/)
 
 ## Dúvidas
 
 Fora do horário de aula ou monitoria:
 
--   perguntas gerais sobre o curso deverão ser feitas no Classroom.
+-   Perguntas gerais sobre o curso deverão ser feitas no Classroom.
 
--   perguntas sobre R, principalmente as que envolverem código, deverão
+-   Perguntas sobre R, principalmente as que envolverem código, deverão
     ser enviadas no [nosso fórum](https://discourse.curso-r.com/).
 
 ## Slides
 
-| slides | pdf |
-|:-------|:----|
+| Slide                                                                                                                                              | PDF                                                                                                                                              |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|
+| [slides/01-introducao-ao-curso.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/01-introducao-ao-curso.html)             | [slides/01-introducao-ao-curso.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/01-introducao-ao-curso.pdf)             |
+| [slides/02-introducao-ao-RStudio.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/02-introducao-ao-RStudio.html)         | [slides/02-introducao-ao-RStudio.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/02-introducao-ao-RStudio.pdf)         |
+| [slides/03-introducao-ao-R.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/03-introducao-ao-R.html)                     | [slides/03-introducao-ao-R.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/03-introducao-ao-R.pdf)                     |
+| [slides/04-tabelas.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/04-tabelas.html)                                     | [slides/04-tabelas.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/04-tabelas.pdf)                                     |
+| [slides/05-filtros.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/05-filtros.html)                                     | [slides/05-filtros.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/05-filtros.pdf)                                     |
+| [slides/06-controle-de-fluxo-e-loops.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/06-controle-de-fluxo-e-loops.html) | [slides/06-controle-de-fluxo-e-loops.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/06-controle-de-fluxo-e-loops.pdf) |
+| [slides/07-funcoes.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/07-funcoes.html)                                     | [slides/07-funcoes.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/07-funcoes.pdf)                                     |
+| [slides/08-manipulacao-de-arquivos.html](https://github.com/curso-r/main-intro-programacao/blob/master/slides/08-manipulacao-de-arquivos.html)     | [slides/08-manipulacao-de-arquivos.pdf](https://github.com/curso-r/main-intro-programacao/blob/master/slides/08-manipulacao-de-arquivos.pdf)     |
 
 ## Scripts utilizados em aula
 
-| script |
-|:-------|
+| Script                                                                                                                                                                         |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [exemplos_de_aula/01-introducao.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/01-introducao.R)                                           |
+| [exemplos_de_aula/02-exemplo-script.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/02-exemplo-script.R)                                   |
+| [exemplos_de_aula/03-tabelas.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/03-tabelas.R)                                                 |
+| [exemplos_de_aula/04-exemplo-script.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/04-exemplo-script.R)                                   |
+| [exemplos_de_aula/05-operadores_controle-de-fluxo_NA.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/05-operadores_controle-de-fluxo_NA.R) |
+| [exemplos_de_aula/06-exemplo-script.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/06-exemplo-script.R)                                   |
+| [exemplos_de_aula/07-loops.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/07-loops.R)                                                     |
+| [exemplos_de_aula/08-exemplo-script.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/08-exemplo-script.R)                                   |
+| [exemplos_de_aula/09-loops-2.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/09-loops-2.R)                                                 |
+| [exemplos_de_aula/10-exemplo-script.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/10-exemplo-script.R)                                   |
+| [exemplos_de_aula/11-funcoes.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/11-funcoes.R)                                                 |
+| [exemplos_de_aula/12-exemplo-script-funcao.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/12-exemplo-script-funcao.R)                     |
+| [exemplos_de_aula/13-pipe.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/13-pipe.R)                                                       |
+| [exemplos_de_aula/14-caminhos.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/14-caminhos.R)                                               |
+| [exemplos_de_aula/14-instalar-pacotes.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/14-instalar-pacotes.R)                               |
+| [exemplos_de_aula/15-caminhos.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/15-caminhos.R)                                               |
+| [exemplos_de_aula/15-instalar-pacotes.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/15-instalar-pacotes.R)                               |
+| [exemplos_de_aula/exemplo-source.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exemplos_de_aula/exemplo-source.R)                                         |
 
 ## Lição de casa
 
-| exercicio |
-|:----------|
+| Exercício                                                                                                              |
+|:-----------------------------------------------------------------------------------------------------------------------|
+| [exercicios/1-introducao.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exercicios/1-introducao.R) |
+| [exercicios/2-tabelas.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exercicios/2-tabelas.R)       |
+| [exercicios/3-filtros.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exercicios/3-filtros.R)       |
+| [exercicios/4-operadores.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exercicios/4-operadores.R) |
+| [exercicios/5-loops.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exercicios/5-loops.R)           |
+| [exercicios/6-funcoes.R](https://github.com/curso-r/202102-intro-programacao/blob/master/exercicios/6-funcoes.R)       |
 
 ## Trabalhos finais premiados
 
-| pasta_compactada |
-|:-----------------|
+| Pasta Compactada                                                                                                                                                   |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [trabalhos_premiados/trabalho_ana_rafaela.zip](https://github.com/curso-r/202102-intro-programacao/blob/master/trabalhos_premiados/trabalho_ana_rafaela.zip)       |
+| [trabalhos_premiados/trabalho_fernando_jose.rar](https://github.com/curso-r/202102-intro-programacao/blob/master/trabalhos_premiados/trabalho_fernando_jose.rar)   |
+| [trabalhos_premiados/trabalho_maykon.zip](https://github.com/curso-r/202102-intro-programacao/blob/master/trabalhos_premiados/trabalho_maykon.zip)                 |
+| [trabalhos_premiados/trabalho_victor_valerio.zip](https://github.com/curso-r/202102-intro-programacao/blob/master/trabalhos_premiados/trabalho_victor_valerio.zip) |
 
 ## Material extra
 
@@ -85,12 +119,12 @@ relacionadas com o conteúdo da aula).
 
 ## Redes sociais da Curso-R
 
-Youtube: <https://www.youtube.com/c/CursoR6/featured>
+-   Youtube: <https://www.youtube.com/c/CursoR6/featured>
 
-Instagram: <https://www.instagram.com/cursoo_r/>
+-   Instagram: <https://www.instagram.com/cursoo_r/>
 
-Twitter: <https://twitter.com/curso_r>
+-   Twitter: <https://twitter.com/curso_r>
 
-Linkedin: <https://www.linkedin.com/company/curso-r/>
+-   Linkedin: <https://www.linkedin.com/company/curso-r/>
 
-Facebook: <https://www.facebook.com/cursodeR>
+-   Facebook: <https://www.facebook.com/cursodeR>
