@@ -41,6 +41,7 @@ jobs:
             any::dplyr
             any::glue
             any::readr
+            github::curso-r/CursoRopen
 
       - name: Execute Script
         env:
