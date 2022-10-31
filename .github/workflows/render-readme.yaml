@@ -1,10 +1,6 @@
 on:
   workflow_dispatch:
     inputs:
-      main_repo:
-        description: 'main_repo: Nome do repositorio main'
-        required: true
-        default: 'main-r4ds-1'
       turma:
         description: 'turma: codigo da turma. ex: 202110-r4ds-1'
         required: true
@@ -17,10 +13,6 @@ on:
         description: 'download_material: TRUE ou FALSE, se o curso tem zip para baixar'
         required: true
         default: 'TRUE'
-      trilha_clean:
-        description: 'trilha_clean: nome da trilha em snake case e sem acentos. ex: programacao_para_ciencia_de_dados'
-        required: true
-        default: 'programacao_para_ciencia_de_dados'
 
 name: render-readme
 
@@ -31,7 +23,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.PAT }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.PAT }}
       - uses: r-lib/actions/setup-r@v2
@@ -39,16 +31,24 @@ jobs:
           use-public-rspm: true
       - uses: r-lib/actions/setup-pandoc@v2
       - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: 2
+          packages:
+            any::knitr
+            any::rmarkdown
+            any::fs
+            any::tibble
+            any::dplyr
+            any::glue
+            any::readr
 
       - name: Execute Script
         env:
-          MAIN_REPO: ${{ github.event.inputs.main_repo }}
           TURMA: ${{ github.event.inputs.turma }}
           NOME_CURSO: ${{ github.event.inputs.nome_curso }}
           DOWNLOAD_MATERIAL: ${{ github.event.inputs.download_material }}
-          TRILHA_CLEAN: ${{ github.event.inputs.trilha_clean }}
         run: |
-          Rscript "inst/render_readme.R"
+          Rscript "assets/render_readme.R"
 
       - name: Commit results
         run: |

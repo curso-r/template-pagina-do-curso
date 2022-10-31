@@ -1,8 +1,6 @@
 ---
 output: github_document
 params:
-  trilha_clean: programacao_para_ciencia_de_dados
-  main_repo: main-intro-programacao
   turma: 202102-intro-programacao
   nome_curso: ATUALIZANDO....
   download_material: 'TRUE'
@@ -11,20 +9,19 @@ params:
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
-# Default chunk options
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  echo = FALSE
-)
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", echo = FALSE,
+                      warning = FALSE, message = FALSE)
 
-# Install deps
-if (!require(CursoRopen, quietly = TRUE)) {
-  remotes::install_github("curso-r/CursoRopen")
+path_to_url <- function(path) {
+  path |>
+    tibble::tibble(file = _) |>
+    dplyr::mutate(
+      url = file |>
+        paste0("https://curso-r.github.io/", params$turma, "/", ... = _) |>
+        paste0("[", fs::path_file(file), "](", ... = _, ")")
+    ) |>
+    dplyr::select(url)
 }
-
-# Branch padrão do repositório da turma
-default_branch <- CursoRopen::get_default_branch(params$turma)
 ```
 
 ## Informações importantes
@@ -32,13 +29,21 @@ default_branch <- CursoRopen::get_default_branch(params$turma)
 ```{r results = 'asis'}
 # Baixar o ZIP do repo da turma (o repo principal não vai ter os scripts feitos em aula)
 if (params$download_material == "TRUE") {
-  glue::glue("- [Clique aqui](https://github.com/curso-r/{params$turma}/archive/refs/heads/{default_branch}.zip) para baixar o material do curso.")
+  glue::glue("- [Clique aqui](https://github.com/curso-r/{params$turma}/archive/refs/heads/main.zip) para baixar o material do curso.")
 }
 ```
 
 - Nosso blog: [https://curso-r.com/blog/](https://curso-r.com/blog/)
 
-- Nossos livros: [Ciência de Dados em R](https://livro.curso-r.com/) e [Zen do R](https://curso-r.github.io/zen-do-r/)
+- Nosso fórum: [https://discourse.curso-r.com/](https://discourse.curso-r.com/)
+
+- Nossos livros: 
+  - [Ciência de Dados em R](https://livro.curso-r.com/)
+  - [Zen do R](https://curso-r.github.io/zen-do-r/)
+  - [Programando em Shiny](https://programando-em-shiny.curso-r.com/)
+  - [Beautiful R](https://curso-r.github.io/beautiful-r/) (em inglês)
+
+
 
 ## Dúvidas
 
@@ -51,96 +56,55 @@ Fora do horário de aula ou monitoria:
 ## Slides
 
 ```{r}
-htmls <- params$turma |>
-  CursoRopen::enframe_github_files("slides/", "[0-9]-.*html$") |>
-  dplyr::filter(!stringr::str_detect(link, "figure-html")) |>
-  dplyr::mutate(
-    key = link |>
-      stringr::str_remove("\\[") |>
-      stringr::str_remove("\\].+") |>
-      fs::path_file() |>
-      fs::path_ext_remove()
-  ) |>
-  dplyr::rename("Slide" = link)
-
-pdfs <- params$turma |>
-  CursoRopen::enframe_github_files("slides/", "[0-9]-.*pdf$") |>
-  dplyr::mutate(
-    key = link |>
-      stringr::str_remove("\\[") |>
-      stringr::str_remove("\\].+") |>
-      fs::path_file() |>
-      fs::path_ext_remove()
-  ) |>
-  dplyr::rename("PDF" = link)
-
-htmls |>
-  dplyr::left_join(pdfs, by = "key") |>
-  dplyr::select(-key) |>
+"slides/" |>
+  fs::dir_ls(glob = "*.html", fail = FALSE) |>
+  path_to_url() |>
+  dplyr::select(Slide = url) |>
   knitr::kable()
 ```
+
 
 ## Scripts utilizados em aula
 
 ```{r}
-params$turma |>
-  CursoRopen::enframe_github_files("exemplos_de_aula/", "\\.R$") |>
-  dplyr::rename("Script" = link) |>
+"exemplos_de_aula/" |>
+  fs::dir_ls(fail = FALSE) |>
+  path_to_url() |>
+  dplyr::select(Exemplo = url) |>
   knitr::kable()
 ```
-
 ## Práticas
 
 ```{r}
-# params$turma |>
-#   CursoRopen::enframe_github_files("pratica/", "\\.R$") |>
-#   dplyr::rename("Script" = link) |>
-#   knitr::kable()
+"praticas/" |>
+  fs::dir_ls(fail = FALSE) |>
+  path_to_url() |>
+  dplyr::select(Exemplo = url) |>
+  knitr::kable()
 ```
 
 ## Lição de casa
 
 ```{r}
-params$turma |>
-  CursoRopen::enframe_github_files("exercicios/", "\\.R$") |>
-  dplyr::rename("Exercício" = link) |>
+"exercicios/" |>
+  fs::dir_ls(fail = FALSE) |>
+  path_to_url() |>
+  dplyr::select(Exercício = url) |>
   knitr::kable()
 ```
 
-## Trabalhos finais premiados
-
-```{r}
-params$turma |>
-  CursoRopen::enframe_github_files("trabalhos_premiados/", "(\\.zip|\\.rar)$") |>
-  dplyr::rename("Pasta Compactada" = link) |>
-  knitr::kable()
-```
 
 ## Material extra
 
-Referências extras relacionadas com o conteúdos das aulas, ou materiais que comentamos quando tiramos dúvidas (não necessariamente são relacionadas com o conteúdo da aula).
+Referências extras relacionadas com o conteúdos das aulas, ou materiais que
+comentamos quando tiramos dúvidas (não necessariamente são relacionadas com o
+conteúdo da aula).
 
-```{r message = FALSE}
-buscar_materias_extras <- function(main_repo = params$main_repo, trilha_clean = params$trilha_clean) {
-  googlesheets4::gs4_deauth()
-  googledrive::drive_deauth()
 
-  id_spreadsheet <- "1YV2vz52u2HXw1IhjrJ7dGhk7sim-9zRM" |>
-    googledrive::as_id() |>
-    googledrive::drive_ls() |>
-    dplyr::filter(name %in% params$trilha_clean) |>
-    dplyr::pull(id) |>
-    googlesheets4::as_sheets_id()
-
-  id_spreadsheet |>
-    googlesheets4::read_sheet(stringr::str_remove(main_repo, "main-")) |>
-    dplyr::mutate(link = glue::glue("[{desc}]({url})")) |>
-    dplyr::select(-desc, -url) |>
-    dplyr::arrange(aula) |>
-    knitr::kable(col.names = c("Aula", "Tema", "Descrição"))
-}
-
-purrr::possibly(buscar_materias_extras, "Verificar tabela de materiais extras")()
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+"extras.csv" |>
+  readr::read_csv2(show_col_types = FALSE) |>
+  knitr::kable()
 ```
 
 ## Redes sociais da Curso-R
@@ -163,7 +127,7 @@ if (params$download_material == TRUE) {
     "logo: assets/logo.png", "\n",
     "title: {params$nome_curso}", "\n",
     "show_downloads: true", "\n",
-    "link_material: 'https://github.com/curso-r/{params$turma}/archive/refs/heads/{default_branch}.zip'",
+    "link_material: 'https://github.com/curso-r/{params$turma}/archive/refs/heads/main.zip'",
     "\n"
   )
 } else {
