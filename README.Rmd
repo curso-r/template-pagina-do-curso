@@ -102,9 +102,14 @@ conteúdo da aula).
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-"extras.csv" |>
-  readr::read_csv2(show_col_types = FALSE) |>
-  knitr::kable()
+arquivo_csv_materiais <- "extras.csv"
+if (file.exists(arquivo_csv_materiais)) {
+  arquivo_csv_materiais |>
+    readr::read_csv2(show_col_types = FALSE) |>
+    knitr::kable()
+} else {
+  cat("Em breve!")
+}
 ```
 
 ## Redes sociais da Curso-R
